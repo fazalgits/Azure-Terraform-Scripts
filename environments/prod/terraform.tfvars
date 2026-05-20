@@ -1,5 +1,5 @@
 resource_group_name = "rg-prod-fazal"
-location            = "East US"
+location            = "East US 2"
 
 vnet_name       = "vnet-prod-fazal"
 address_space   = ["10.1.0.0/16"]

@@ -1,13 +1,13 @@
 module "resource_group" {
   source              = "../../modules/resource-group"
   resource_group_name = "rg-prod-fazal"
-  location            = "East US"
+  location            = "East US 2"
 }
 
 module "networking" {
   source              = "../../modules/networking"
   resource_group_name = module.resource_group.resource_group_name
-  location            = "East US"
+  location            = "East US 2"
 
   vnet_name           = "vnet-prod-fazal"
   subnet_name         = "subnet-prod-fazal"
@@ -18,7 +18,7 @@ module "networking" {
 module "security" {
   source              = "../../modules/security"
   resource_group_name = module.resource_group.resource_group_name
-  location            = "East US"
+  location            = "East US 2"
 
   nsg_name            = "nsg-prod-fazal"
 }
@@ -27,7 +27,7 @@ module "virtual_machine" {
   source              = "../../modules/virtual-machine"
 
   resource_group_name = module.resource_group.resource_group_name
-  location            = "East US"
+  location            = "East US 2"
 
   vm_name             = "vm-prod-fazal"
   admin_username      = "azureuser"
